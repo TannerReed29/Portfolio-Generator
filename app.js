@@ -1,48 +1,61 @@
-    // Enable filesystem Module
-const fs = require('fs');
+const inquirer = require('inquirer');
+// Enable filesystem Module
+//const fs = require('fs');
+    // constant for generated page
+//const generatePage = require('./src/page-template.js');
+ 
+//const pageHTML = generatePage(myname, github);
 
-const generatePage = require('./src/page-template.js');
-    // Holds user command-line arguments
-const profileDataArgs = process.argv.slice(2);
 
-    // Extract Arguments and store in distinct variables
-    //const name = profileDataArgs[0];
-    //const github = profileDataArgs[1];
+
+
+//fs.writeFile('./index.html', pageHTML, err => 
+//{
+//    if (err) throw err;
+//    
+//    console.log('Portfolio complete! Check out index.html to see output!');
+//}
+//);
+
+
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+        }
+        
+    ])
+    .then(answers => console.log(answers));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ES6 feature assignment destructuring. assigns elements of an array
     // to variable names in a single expression.
     // taking the previous 2 variables into a one line version
-const [myname, github] = profileDataArgs;
+// const [myname, github] = profileDataArgs;
 
 
+    // Holds user command-line arguments
+// const profileDataArgs = process.argv.slice(2);
 
-fs.writeFile('index.html', generatePage(myname, github), err => 
-    {
-    if (err) throw err;
-
-    console.log('Portfolio complete! Check out index.html to see output!');
-    }
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Extract Arguments and store in distinct variables
+//const name = profileDataArgs[0];
+//const github = profileDataArgs[1];
 
 /*
 const generatePage = (userName, githubName) => {
